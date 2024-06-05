@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css?family=Gochi+Hand");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+.heading__title {
+    transform: rotate(2deg);
+    padding: 0.2rem 1.2rem;
+    border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
+    background-color: rgba(0, 255, 196, 0.7);
+    font-size: 1.5rem;
+    margin: auto;
+    font-family: "Playfair Display", serif;
+  }
+  
+  @media only screen and (min-width: 500px) {
+    .heading__title {
+      font-size: 2rem;
+    }
+  }
+ 
