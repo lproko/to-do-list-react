@@ -1,3 +1,4 @@
 api-server/node_modules
 todolist/node_modules
 api-server/db.json
+todolist/src/Components/TaskModal.tsx

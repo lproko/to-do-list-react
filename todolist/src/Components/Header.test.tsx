@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
+import "@testing-library/jest-dom";
 import Header from "./Header";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ChakraProvider } from "@chakra-ui/react";
@@ -21,13 +21,11 @@ describe("Header component", () => {
     expect(screen.getByText(/To-Do List/i)).toBeInTheDocument();
 
     // Check if the button is rendered and clickable
-    const button = screen.getAllByText(/Add New Task \+/i);
+    const button = screen.getByText(/Add New Task \+/i);
     expect(button).toBeInTheDocument();
-    button.forEach((element) => {
-      fireEvent.click(element);
-    });
+    fireEvent.click(button);
 
     // Check if the modal is opened
-    expect(screen.getByText(/New Task/i)).toBeInTheDocument();
+    expect(screen.getByText(/Task information/i)).toBeInTheDocument();
   });
 });

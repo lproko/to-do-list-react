@@ -123,10 +123,10 @@ function TaskModal({ isOpen, onClose, refetch, edit, id }: TaskModalProps) {
       const update = await updateTask(id, {
         title: submitted.title ?? data?.title,
         description: submitted.description ?? data?.description,
-        category: submitted.category ?? category,
-        assignee: submitted.assignee ?? assignee,
-        priority: submitted.priority ?? priority,
-        completed: submitted.completed ?? lastDate,
+        category: submitted.category ?? data?.category,
+        assignee: submitted.assignee ?? data?.assignee,
+        priority: submitted.priority ?? data?.priority,
+        completed: submitted.completed ?? data?.completed,
         status: submitted.status ?? data?.status,
       });
       if (update) {
@@ -170,7 +170,7 @@ function TaskModal({ isOpen, onClose, refetch, edit, id }: TaskModalProps) {
     <Modal isOpen={isOpen} onClose={handleModalClose}>
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>New Task</ModalHeader>
+        <ModalHeader>Task information</ModalHeader>
         <ModalCloseButton />
         <form onSubmit={handleSubmit(onSubmit)}>
           <ModalBody>
@@ -241,9 +241,9 @@ function TaskModal({ isOpen, onClose, refetch, edit, id }: TaskModalProps) {
                       value={priority}
                       onChange={(e) => handlePriorityChange(e)}
                     >
-                      <option value={0}>Low Priority</option>
-                      <option value={1}>Medium Priority</option>
-                      <option value={2}>High Priority</option>
+                      <option value="Low Priority">Low Priority</option>
+                      <option value="Medium Priority">Medium Priority</option>
+                      <option value="High Priority">High Priority</option>
                     </Select>
                   </Box>
                   <Box>

@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
+import "@testing-library/jest-dom";
 import ListTasks from "./ListTasks";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ChakraProvider } from "@chakra-ui/react";
@@ -7,9 +7,9 @@ import { ChakraProvider } from "@chakra-ui/react";
 // Mock API calls
 jest.mock("../api", () => ({
   fetchTasks: jest.fn().mockResolvedValue([
-    { id: "1", title: "Test Task 1", description: "Description 1", status: 0 },
-    { id: "2", title: "Test Task 2", description: "Description 2", status: 1 },
-    { id: "3", title: "Test Task 3", description: "Description 3", status: 2 },
+    { title: "Test Task 1", description: "Description 1", status: "0" },
+    { title: "Test Task 2", description: "Description 2", status: "1" },
+    { title: "Test Task 3", description: "Description 3", status: "2" },
   ]),
   deleteTasksbyId: jest.fn().mockResolvedValue(true),
 }));

@@ -46,13 +46,13 @@ function ListTasks() {
     )
   );
   const [toDoTasks, setToDoTask] = useState(
-    filteredTodos?.filter((task: any) => task?.status === 0)
+    filteredTodos?.filter((task: any) => task?.status === "0")
   );
   const [doingTasks, setDoingTask] = useState(
-    filteredTodos?.filter((task: any) => task?.status === 1)
+    filteredTodos?.filter((task: any) => task?.status === "1")
   );
   const [doneTasks, setDoneTask] = useState(
-    filteredTodos?.filter((task: any) => task?.status === 2)
+    filteredTodos?.filter((task: any) => task?.status === "2")
   );
   const [deleteTask, setDeleteTask] = useState("");
   useEffect(() => {
@@ -71,7 +71,6 @@ function ListTasks() {
     refetch();
     onCloseDelete();
   };
-  console.log(filteredTodos);
   return (
     <Flex flexDirection="column">
       <Flex w="100%" mt=".5rem" flexDirection="column" alignItems="center">
@@ -154,7 +153,12 @@ function ListTasks() {
             toDoTasks &&
             toDoTasks.map((task: any) => {
               return (
-                <Flex height="200px" justifyContent="center" w="100%">
+                <Flex
+                  key={task.id}
+                  height="200px"
+                  justifyContent="center"
+                  w="100%"
+                >
                   <Card w="90%">
                     <CardBody>
                       <Stack mt="6" spacing="3">
@@ -195,12 +199,18 @@ function ListTasks() {
           overflowY="auto"
           border="1px solid gray"
           borderRadius="2px"
+          flexDirection="column"
         >
           {!isPending &&
             doingTasks &&
             doingTasks.map((task: any) => {
               return (
-                <Flex height="200px" justifyContent="center" w="100%">
+                <Flex
+                  key={task.id}
+                  height="200px"
+                  justifyContent="center"
+                  w="100%"
+                >
                   <Card w="90%">
                     <CardBody>
                       <Stack mt="6" spacing="3">
@@ -241,12 +251,18 @@ function ListTasks() {
           overflowY="auto"
           border="1px solid gray"
           borderRadius="2px"
+          flexDirection="column"
         >
           {!isPending &&
             doneTasks &&
             doneTasks.map((task: any) => {
               return (
-                <Flex height="200px" justifyContent="center" w="100%">
+                <Flex
+                  key={task.id}
+                  height="200px"
+                  justifyContent="center"
+                  w="100%"
+                >
                   <Card w="90%">
                     <CardBody>
                       <Stack mt="6" spacing="3">
@@ -303,7 +319,9 @@ function ListTasks() {
               <Button colorScheme="red" mr={3} onClick={handleDelete}>
                 Delete
               </Button>
-              <Button variant="ghost">Cancel</Button>
+              <Button variant="ghost" onClick={onCloseDelete}>
+                Cancel
+              </Button>
             </ModalFooter>
           </ModalContent>
         </Modal>
