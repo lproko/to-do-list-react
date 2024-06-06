@@ -8,10 +8,6 @@ This is a simple To-Do List application built with React and Chakra UI. The app 
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Running the App](#running-the-app)
-- [Running the Tests](#running-the-tests)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
