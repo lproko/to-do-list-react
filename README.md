@@ -41,7 +41,7 @@ This is a simple To-Do List application built with React and Chakra UI. The app 
 
 ## Running the App
 
-# Start the JSON Server
+### Start the JSON Server
 
 - The json-server will act as your local REST API. Run the following command to start it:
 
@@ -52,7 +52,7 @@ This is a simple To-Do List application built with React and Chakra UI. The app 
 
 - By default, this will start the server at http://localhost:3000
 
-# Start the React App
+### Start the React App
 
 - In a separate terminal window/tab, start the React development server:
   ```bash
